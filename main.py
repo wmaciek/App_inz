@@ -266,10 +266,10 @@ img_retina_3 = np.load('files/img_retina_3_p.npy')
 img_retina_4 = np.load('files/img_retina_4_p.npy')
 
 # for pictures
-img_oct_0_ = np.load('files/img_oct_0_p.npy')
-img_oct_1_ = np.load('files/img_oct_1_p.npy')
-img_oct_2_ = np.load('files/img_oct_2_p.npy')
-img_oct_3_ = np.load('files/img_oct_3_p.npy')
+img_oct_0_ = np.load('files/img_oct_0.npy')
+img_oct_1_ = np.load('files/img_oct_1.npy')
+img_oct_2_ = np.load('files/img_oct_2.npy')
+img_oct_3_ = np.load('files/img_oct_3.npy')
 
 img_retina_0_ = np.load('files/img_retina_0_p.npy')
 img_retina_1_ = np.load('files/img_retina_1_p.npy')
