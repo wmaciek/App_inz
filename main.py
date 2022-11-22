@@ -250,10 +250,12 @@ im_3 = img.imread('files/retina_2.png')
 st.image([im_1, im_2, im_3], clamp=True, width=230)
 
 
-img_pneumonia_0 = np.load('files/img_pneumonia_0.npy')
-img_pneumonia_1 = np.load('files/img_pneumonia_1.npy')
+
 
 # for models
+img_pneumonia_0 = np.load('files/img_pneumonia_0_p.npy')
+img_pneumonia_1 = np.load('files/img_pneumonia_1_p.npy')
+
 img_oct_0 = np.load('files/img_oct_0_p.npy')
 img_oct_1 = np.load('files/img_oct_1_p.npy')
 img_oct_2 = np.load('files/img_oct_2_p.npy')
@@ -266,6 +268,9 @@ img_retina_3 = np.load('files/img_retina_3_p.npy')
 img_retina_4 = np.load('files/img_retina_4_p.npy')
 
 # for pictures
+img_pneumonia_0_ = np.load('files/img_pneumonia_0.npy')
+img_pneumonia_1_ = np.load('files/img_pneumonia_1.npy')
+
 img_oct_0_ = np.load('files/img_oct_0.npy')
 img_oct_1_ = np.load('files/img_oct_1.npy')
 img_oct_2_ = np.load('files/img_oct_2.npy')
@@ -280,7 +285,7 @@ tab1.subheader("Próbki obrazów płuc:")
 
 colp1, colp2, colp3 = tab1.columns(3)
 with colp1:
-    st.image(img_pneumonia_0.reshape(28,28), width=100, clamp=True)
+    st.image(img_pneumonia_0_.reshape(28,28), width=100, clamp=True)
 with colp2:
     pred_button = st.button("Klasyfikuj obraz")
 with colp3:
@@ -295,7 +300,7 @@ tab1.markdown("""---""")
 
 colp11, colp22, colp33 = tab1.columns(3)
 with colp11:
-    st.image(img_pneumonia_1.reshape(28,28), width=100, clamp=True)
+    st.image(img_pneumonia_1_.reshape(28,28), width=100, clamp=True)
 with colp22:
     pred_button = st.button("Klasyfikuj obraz", key=1)
 with colp33:
