@@ -271,12 +271,6 @@ img_oct_1_ = np.load('files/img_oct_1.npy')
 img_oct_2_ = np.load('files/img_oct_2.npy')
 img_oct_3_ = np.load('files/img_oct_3.npy')
 
-img_retina_0_ = np.load('files/img_retina_0_p.npy')
-img_retina_1_ = np.load('files/img_retina_1_p.npy')
-img_retina_2_ = np.load('files/img_retina_2_p.npy')
-img_retina_3_ = np.load('files/img_retina_3_p.npy')
-img_retina_4_ = np.load('files/img_retina_4_p.npy')
-
 tab1, tab2, tab3 = st.tabs(["Pneumonia", "OCT", "Retina"])
 
 ###################
