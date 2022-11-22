@@ -249,19 +249,33 @@ im_3 = img.imread('files/retina_2.png')
 
 st.image([im_1, im_2, im_3], clamp=True, width=230)
 
+
 img_pneumonia_0 = np.load('files/img_pneumonia_0.npy')
 img_pneumonia_1 = np.load('files/img_pneumonia_1.npy')
 
-img_oct_0 = np.load('files/img_oct_0.npy')
-img_oct_1 = np.load('files/img_oct_1.npy')
-img_oct_2 = np.load('files/img_oct_2.npy')
-img_oct_3 = np.load('files/img_oct_3.npy')
+# for models
+img_oct_0 = np.load('files/img_oct_0_p.npy')
+img_oct_1 = np.load('files/img_oct_1_p.npy')
+img_oct_2 = np.load('files/img_oct_2_p.npy')
+img_oct_3 = np.load('files/img_oct_3_p.npy')
 
-img_retina_0 = np.load('files/img_retina_0.npy')
-img_retina_1 = np.load('files/img_retina_1.npy')
-img_retina_2 = np.load('files/img_retina_2.npy')
-img_retina_3 = np.load('files/img_retina_3.npy')
-img_retina_4 = np.load('files/img_retina_4.npy')
+img_retina_0 = np.load('files/img_retina_0_p.npy')
+img_retina_1 = np.load('files/img_retina_1_p.npy')
+img_retina_2 = np.load('files/img_retina_2_p.npy')
+img_retina_3 = np.load('files/img_retina_3_p.npy')
+img_retina_4 = np.load('files/img_retina_4_p.npy')
+
+# for pictures
+img_oct_0_ = np.load('files/img_oct_0_p.npy')
+img_oct_1_ = np.load('files/img_oct_1_p.npy')
+img_oct_2_ = np.load('files/img_oct_2_p.npy')
+img_oct_3_ = np.load('files/img_oct_3_p.npy')
+
+img_retina_0_ = np.load('files/img_retina_0_p.npy')
+img_retina_1_ = np.load('files/img_retina_1_p.npy')
+img_retina_2_ = np.load('files/img_retina_2_p.npy')
+img_retina_3_ = np.load('files/img_retina_3_p.npy')
+img_retina_4_ = np.load('files/img_retina_4_p.npy')
 
 tab1, tab2, tab3 = st.tabs(["Pneumonia", "OCT", "Retina"])
 
@@ -306,7 +320,7 @@ tab2.subheader("Próbki obrazów siatkówki:")
 
 colo1, colo2, colo3 = tab2.columns(3)
 with colo1:
-    st.image(img_oct_0.reshape(28,28), width=100, clamp=True)
+    st.image(img_oct_0_.reshape(28,28), width=100, clamp=True)
 with colo2:
     pred_button = st.button("Klasyfikuj obraz", key=2)
 with colo3:
@@ -321,7 +335,7 @@ tab2.markdown("""---""")
 
 colo11, colo22, colo33 = tab2.columns(3)
 with colo11:
-    st.image(img_oct_1.reshape(28,28), width=100, clamp=True)
+    st.image(img_oct_1_.reshape(28,28), width=100, clamp=True)
 with colo22:
     pred_button = st.button("Klasyfikuj obraz", key=3)
 with colo33:
@@ -336,7 +350,7 @@ tab2.markdown("""---""")
 
 colo111, colo222, colo333 = tab2.columns(3)
 with colo111:
-    st.image(img_oct_2.reshape(28,28), width=100, clamp=True)
+    st.image(img_oct_2_.reshape(28,28), width=100, clamp=True)
 with colo222:
     pred_button = st.button("Klasyfikuj obraz", key=4)
 with colo333:
@@ -351,7 +365,7 @@ tab2.markdown("""---""")
 
 colo1111, colo2222, colo3333 = tab2.columns(3)
 with colo1111:
-    st.image(img_oct_3.reshape(28,28), width=100, clamp=True)
+    st.image(img_oct_3_.reshape(28,28), width=100, clamp=True)
 with colo2222:
     pred_button = st.button("Klasyfikuj obraz", key=5)
 with colo3333:
