@@ -297,7 +297,8 @@ with colp3:
     if pred_button:
         pred, out = predict(model_pneumonia, img_pneumonia_0)
 
-        st.write(f'Klasyfikacja: {dict_pneumonia[pred]}\nPewność: {round((np.max(out)*100), 2)}%')
+        st.write(f'Klasyfikacja: {dict_pneumonia[pred]}')
+        st.write(f'Pewność: {round((np.max(out) * 100), 2)}%')
 
 tab1.markdown("""---""")
 
@@ -310,7 +311,8 @@ with colp33:
     if pred_button:
         pred, out = predict(model_pneumonia, img_pneumonia_1)
 
-        st.write(f'Klasyfikacja: {dict_pneumonia[pred]}\nPewność: {round((np.max(out) * 100), 2)}%')
+        st.write(f'Klasyfikacja: {dict_pneumonia[pred]}')
+        st.write(f'Pewność: {round((np.max(out) * 100), 2)}%')
 
 
 ###################
@@ -327,7 +329,8 @@ with colo3:
     if pred_button:
         pred, out = predict(model_oct, img_oct_0)
 
-        st.write(f'Klasyfikacja: {dict_oct[pred]}\nPewność: {round((np.max(out) * 100), 2)}%')
+        st.write(f'Klasyfikacja: {dict_oct[pred]}')
+        st.write(f'Pewność: {round((np.max(out) * 100), 2)}%')
 
 tab2.markdown("""---""")
 
@@ -340,7 +343,8 @@ with colo33:
     if pred_button:
         pred, out = predict(model_oct, img_oct_1)
 
-        st.write(f'Klasyfikacja: {dict_oct[pred]}\nPewność: {round((np.max(out) * 100), 2)}%')
+        st.write(f'Klasyfikacja: {dict_oct[pred]}')
+        st.write(f'Pewność: {round((np.max(out) * 100), 2)}%')
 
 tab2.markdown("""---""")
 
@@ -353,7 +357,8 @@ with colo333:
     if pred_button:
         pred, out = predict(model_oct, img_oct_2)
 
-        st.write(f'Klasyfikacja: {dict_oct[pred]}\nPewność: {round((np.max(out) * 100), 2)}%')
+        st.write(f'Klasyfikacja: {dict_oct[pred]}')
+        st.write(f'Pewność: {round((np.max(out) * 100), 2)}%')
 
 tab2.markdown("""---""")
 
@@ -366,7 +371,8 @@ with colo3333:
     if pred_button:
         pred, out = predict(model_oct, img_oct_3)
 
-        st.write(f'Klasyfikacja: {dict_oct[pred]}\nPewność: {round((np.max(out) * 100), 2)}%')
+        st.write(f'Klasyfikacja: {dict_oct[pred]}')
+        st.write(f'Pewność: {round((np.max(out) * 100), 2)}%')
 
 ###################
 # Tab for Retina
@@ -382,7 +388,8 @@ with colr3:
     if pred_button:
         pred, out = predictRGB(model_retina, img_retina_0)
 
-        st.write(f'Klasyfikacja: {dict_retina[pred]}\nPewność: {round((np.max(out) * 100), 2)}%')
+        st.write(f'Klasyfikacja: {dict_retina[pred]}')
+        st.write(f'Pewność: {round((np.max(out) * 100), 2)}%')
 
 tab3.markdown("""---""")
 
@@ -395,7 +402,8 @@ with colr33:
     if pred_button:
         pred, out = predictRGB(model_retina, img_retina_1)
 
-        st.write(f'Klasyfikacja: {dict_retina[pred]}\nPewność: {round((np.max(out) * 100), 2)}%')
+        st.write(f'Klasyfikacja: {dict_retina[pred]}')
+        st.write(f'Pewność: {round((np.max(out) * 100), 2)}%')
 
 tab3.markdown("""---""")
 
@@ -408,7 +416,8 @@ with colr333:
     if pred_button:
         pred, out = predictRGB(model_retina, img_retina_2)
 
-        st.write(f'Klasyfikacja: {dict_retina[pred]}\nPewność: {round((np.max(out) * 100), 2)}%')
+        st.write(f'Klasyfikacja: {dict_retina[pred]}')
+        st.write(f'Pewność: {round((np.max(out) * 100), 2)}%')
 
 tab3.markdown("""---""")
 
@@ -421,7 +430,8 @@ with colr3333:
     if pred_button:
         pred, out = predictRGB(model_retina, img_retina_3)
 
-        st.write(f'Klasyfikacja: {dict_retina[pred]}\nPewność: {round((np.max(out) * 100), 2)}%')
+        st.write(f'Klasyfikacja: {dict_retina[pred]}')
+        st.write(f'Pewność: {round((np.max(out) * 100), 2)}%')
 
 tab3.markdown("""---""")
 
@@ -434,5 +444,6 @@ with colr33333:
     if pred_button:
         pred, out = predictRGB(model_retina, img_retina_4)
 
-        st.write(f'Klasyfikacja: {dict_retina[pred]}\nPewność: {round((np.max(out) * 100), 2)}%')
+        st.write(f'Klasyfikacja: {dict_retina[pred]}')
+        st.write(f'Pewność: {round((np.max(out) * 100), 2)}%')
 
