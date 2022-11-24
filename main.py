@@ -276,10 +276,10 @@ img_oct_1_ = np.load('files/img_oct_1.npy')
 img_oct_2_ = np.load('files/img_oct_2.npy')
 img_oct_3_ = np.load('files/img_oct_3.npy')
 
-with st.spinner("Ładowanie modeli..."):
-    model_pneumonia = model_upload(PneumoniaNetwork, 'files/model_pneumonia_91_the_best.pth')
-    model_oct = model_upload(OCTNetwork, 'files/model_oct_77.pth')
-    model_retina = model_upload(RetinaNetwork, 'files/model_retina_53_53.pth')
+
+model_pneumonia = model_upload(PneumoniaNetwork, 'files/model_pneumonia_91_the_best.pth')
+model_oct = model_upload(OCTNetwork, 'files/model_oct_77.pth')
+model_retina = model_upload(RetinaNetwork, 'files/model_retina_53_53.pth')
 
 tab1, tab2, tab3 = st.tabs(["Pneumonia", "OCT", "Retina"])
 
