@@ -276,6 +276,11 @@ img_oct_1_ = np.load('files/img_oct_1.npy')
 img_oct_2_ = np.load('files/img_oct_2.npy')
 img_oct_3_ = np.load('files/img_oct_3.npy')
 
+with st.spinner("Ładowanie modeli..."):
+    model_pneumonia = model_upload(PneumoniaNetwork, 'files/model_pneumonia_91_the_best.pth')
+    model_oct = model_upload(OCTNetwork, 'files/model_oct_77.pth')
+    model_retina = model_upload(RetinaNetwork, 'files/model_retina_53_53.pth')
+
 tab1, tab2, tab3 = st.tabs(["Pneumonia", "OCT", "Retina"])
 
 ###################
@@ -290,9 +295,7 @@ with colp2:
     pred_button = st.button("Klasyfikuj obraz")
 with colp3:
     if pred_button:
-        with st.spinner("Ładowanie modelu..."):
-            model = model_upload(PneumoniaNetwork, 'files/model_pneumonia_91_the_best.pth')
-        pred, out = predict(model, img_pneumonia_0)
+        pred, out = predict(model_pneumonia, img_pneumonia_0)
 
         st.write(f'Klasyfikacja: {dict_pneumonia[pred]}, pewność: {round((np.max(out)*100), 2)}%')
 
@@ -305,9 +308,7 @@ with colp22:
     pred_button = st.button("Klasyfikuj obraz", key=1)
 with colp33:
     if pred_button:
-        with st.spinner("Ładowanie modelu..."):
-            model = model_upload(PneumoniaNetwork, 'files/model_pneumonia_91_the_best.pth')
-        pred, out = predict(model, img_pneumonia_1)
+        pred, out = predict(model_pneumonia, img_pneumonia_1)
 
         st.write(f'Klasyfikacja: {dict_pneumonia[pred]}, pewność: {round((np.max(out) * 100), 2)}%')
 
