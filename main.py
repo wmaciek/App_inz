@@ -325,9 +325,7 @@ with colo2:
     pred_button = st.button("Klasyfikuj obraz", key=2)
 with colo3:
     if pred_button:
-        with st.spinner("Ładowanie modelu..."):
-            model = model_upload(OCTNetwork, 'files/model_oct_77.pth')
-        pred, out = predict(model, img_oct_0)
+        pred, out = predict(model_oct, img_oct_0)
 
         st.write(f'Klasyfikacja: {dict_oct[pred]}, pewność: {round((np.max(out) * 100), 2)}%')
 
@@ -340,9 +338,7 @@ with colo22:
     pred_button = st.button("Klasyfikuj obraz", key=3)
 with colo33:
     if pred_button:
-        with st.spinner("Ładowanie modelu..."):
-            model = model_upload(OCTNetwork, 'files/model_oct_77.pth')
-        pred, out = predict(model, img_oct_1)
+        pred, out = predict(model_oct, img_oct_1)
 
         st.write(f'Klasyfikacja: {dict_oct[pred]}, pewność: {round((np.max(out) * 100), 2)}%')
 
@@ -355,9 +351,7 @@ with colo222:
     pred_button = st.button("Klasyfikuj obraz", key=4)
 with colo333:
     if pred_button:
-        with st.spinner("Ładowanie modelu..."):
-            model = model_upload(OCTNetwork, 'files/model_oct_77.pth')
-        pred, out = predict(model, img_oct_2)
+        pred, out = predict(model_oct, img_oct_2)
 
         st.write(f'Klasyfikacja: {dict_oct[pred]}, pewność: {round((np.max(out) * 100), 2)}%')
 
@@ -370,9 +364,7 @@ with colo2222:
     pred_button = st.button("Klasyfikuj obraz", key=5)
 with colo3333:
     if pred_button:
-        with st.spinner("Ładowanie modelu..."):
-            model = model_upload(OCTNetwork, 'files/model_oct_77.pth')
-        pred, out = predict(model, img_oct_3)
+        pred, out = predict(model_oct, img_oct_3)
 
         st.write(f'Klasyfikacja: {dict_oct[pred]}, pewność: {round((np.max(out) * 100), 2)}%')
 
@@ -388,9 +380,7 @@ with colr2:
     pred_button = st.button("Klasyfikuj obraz", key=6)
 with colr3:
     if pred_button:
-        with st.spinner("Ładowanie modelu..."):
-            model = model_upload(RetinaNetwork, 'files/model_retina_53_53.pth')
-        pred, out = predictRGB(model, img_retina_0)
+        pred, out = predictRGB(model_retina, img_retina_0)
 
         st.write(f'Klasyfikacja: {dict_retina[pred]}, pewność: {round((np.max(out) * 100), 2)}%')
 
@@ -403,9 +393,7 @@ with colr22:
     pred_button = st.button("Klasyfikuj obraz", key=7)
 with colr33:
     if pred_button:
-        with st.spinner("Ładowanie modelu..."):
-            model = model_upload(RetinaNetwork, 'files/model_retina_53_53.pth')
-        pred, out = predictRGB(model, img_retina_1)
+        pred, out = predictRGB(model_retina, img_retina_1)
 
         st.write(f'Klasyfikacja: {dict_retina[pred]}, pewność: {round((np.max(out) * 100), 2)}%')
 
@@ -418,9 +406,7 @@ with colr222:
     pred_button = st.button("Klasyfikuj obraz", key=8)
 with colr333:
     if pred_button:
-        with st.spinner("Ładowanie modelu..."):
-            model = model_upload(RetinaNetwork, 'files/model_retina_53_53.pth')
-        pred, out = predictRGB(model, img_retina_2)
+        pred, out = predictRGB(model_retina, img_retina_2)
 
         st.write(f'Klasyfikacja: {dict_retina[pred]}, pewność: {round((np.max(out) * 100), 2)}%')
 
@@ -433,9 +419,7 @@ with colr2222:
     pred_button = st.button("Klasyfikuj obraz", key=9)
 with colr3333:
     if pred_button:
-        with st.spinner("Ładowanie modelu..."):
-            model = model_upload(RetinaNetwork, 'files/model_retina_53_53.pth')
-        pred, out = predictRGB(model, img_retina_3)
+        pred, out = predictRGB(model_retina, img_retina_3)
 
         st.write(f'Klasyfikacja: {dict_retina[pred]}, pewność: {round((np.max(out) * 100), 2)}%')
 
@@ -448,9 +432,7 @@ with colr22222:
     pred_button = st.button("Klasyfikuj obraz", key=10)
 with colr33333:
     if pred_button:
-        with st.spinner("Ładowanie modelu..."):
-            model = model_upload(RetinaNetwork, 'files/model_retina_53_53.pth')
-        pred, out = predictRGB(model, img_retina_4)
+        pred, out = predictRGB(model_retina, img_retina_4)
 
         st.write(f'Klasyfikacja: {dict_retina[pred]}, pewność: {round((np.max(out) * 100), 2)}%')
 
