@@ -222,7 +222,7 @@ st.markdown("<h1 style='text-align: center; color: silver;'>System klasyfikacji 
 
 st.text("\n\n")
 
-st.text("(yyyyW celu skorzystania z systemu wybierz odpowiednią kategorię obrazów medycznych.\n"
+st.text("W celu skorzystania z systemu wybierz odpowiednią kategorię obrazów medycznych.\n"
         "Następnie załaduj zdjęcie diagnostyczne.\n\nPoniżej przykłady obrazów każdej kategorii:\n\n")
 
 
@@ -230,6 +230,9 @@ im_1 = img.imread('files/pneumonia_2.png')
 im_2 = img.imread('files/oct_2.png')
 im_3 = img.imread('files/retina_2.png')
 
+with st.sidebar:
+    with st.echo():
+        st.write("This code will be printed to the sidebar.")
 
 st.image([im_1, im_2, im_3], clamp=True, width=230)
 
