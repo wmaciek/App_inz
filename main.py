@@ -232,6 +232,8 @@ im_3 = img.imread('files/retina_2.png')
 st.sidebar.text("Sprawdź statystyki")
 model = st.sidebar.selectbox("Wybierz model:", ['pneumoniamnist', 'octmnist', 'retinamnist'])
 
+if model == 'pneumoniamnist':
+    st.sidebar.write("v`grwh`")
 st.image([im_1, im_2, im_3], clamp=True, width=230)
 
 
