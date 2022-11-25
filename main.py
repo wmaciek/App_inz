@@ -1,5 +1,3 @@
-import io
-
 import streamlit as st
 import torch
 import torch.nn as nn
@@ -76,9 +74,6 @@ class PneumoniaNetwork(nn.Module):
         self.conv4 = nn.Conv2d(80, 160, 3, 1)
         self.conv4_bn = nn.BatchNorm2d(160)
 
-        # self.conv5 = nn.Conv2d(128, 180, 3, 1)
-        # self.conv5_bn=nn.BatchNorm2d(180)
-
         self.fc1 = nn.Linear(7*7*160, 1000)  # ((((28-2)/2)-2)/2) = 5,..
         self.fc1_bn = nn.BatchNorm1d(1000)
 
@@ -103,10 +98,7 @@ class PneumoniaNetwork(nn.Module):
         X = F.relu(self.conv3_bn(X))  # 3
 
         X = self.conv4(X)
-        X = F.relu(self.conv4_bn(X))  #4
-
-        # X = self.conv5(X)
-        # X = F.relu(self.conv5_bn(X))  #4
+        X = F.relu(self.conv4_bn(X))  # 4
 
         X = X.view(-1, 7*7*160)
 
@@ -124,30 +116,27 @@ class OCTNetwork(nn.Module):
     def __init__(self):
         super().__init__()
         self.conv1 = nn.Conv2d(1, 20, 3, 1)
-        self.conv1_bn=nn.BatchNorm2d(20)
+        self.conv1_bn = nn.BatchNorm2d(20)
 
         self.conv2 = nn.Conv2d(20, 40, 3, 1)
-        self.conv2_bn=nn.BatchNorm2d(40)
+        self.conv2_bn = nn.BatchNorm2d(40)
 
         self.conv3 = nn.Conv2d(40, 80, 3, 1)
-        self.conv3_bn=nn.BatchNorm2d(80)
+        self.conv3_bn = nn.BatchNorm2d(80)
 
         self.conv4 = nn.Conv2d(80, 160, 3, 1)
-        self.conv4_bn=nn.BatchNorm2d(160)
+        self.conv4_bn = nn.BatchNorm2d(160)
 
-        # self.conv5 = nn.Conv2d(128, 180, 3, 1)
-        # self.conv5_bn=nn.BatchNorm2d(180)
-
-        self.fc1 = nn.Linear(7*7*160, 1000) # ((((28-2)/2)-2)/2) = 5,..
-        self.fc1_bn=nn.BatchNorm1d(1000)
+        self.fc1 = nn.Linear(7*7*160, 1000)  # ((((28-2)/2)-2)/2) = 5,..
+        self.fc1_bn = nn.BatchNorm1d(1000)
 
         self.fc2 = nn.Linear(1000, 500)
-        self.fc2_bn=nn.BatchNorm1d(500)
+        self.fc2_bn = nn.BatchNorm1d(500)
 
         self.fc3 = nn.Linear(500, 50)
-        self.fc3_bn=nn.BatchNorm1d(50)
+        self.fc3_bn = nn.BatchNorm1d(50)
 
-        self.fc4 = nn.Linear(50, 4) # change
+        self.fc4 = nn.Linear(50, 4)  # change
 
     def forward(self, X):
         X = self.conv1(X)
@@ -163,9 +152,6 @@ class OCTNetwork(nn.Module):
 
         X = self.conv4(X)
         X = F.relu(self.conv4_bn(X))  #4
-
-        # X = self.conv5(X)
-        # X = F.relu(self.conv5_bn(X))  #4
 
         X = X.view(-1, 7*7*160)
 
@@ -183,22 +169,22 @@ class RetinaNetwork(nn.Module):
     def __init__(self):
         super().__init__()
         self.conv1 = nn.Conv2d(3, 16, 3, 1)
-        self.conv1_bn=nn.BatchNorm2d(16)
+        self.conv1_bn = nn.BatchNorm2d(16)
 
         self.conv2 = nn.Conv2d(16, 32, 3, 1)
-        self.conv2_bn=nn.BatchNorm2d(32)
+        self.conv2_bn = nn.BatchNorm2d(32)
 
         self.conv3 = nn.Conv2d(32, 63, 3, 1)
-        self.conv3_bn=nn.BatchNorm2d(63)
+        self.conv3_bn = nn.BatchNorm2d(63)
 
         self.conv4 = nn.Conv2d(63, 128, 3, 1)
-        self.conv4_bn=nn.BatchNorm2d(128)
+        self.conv4_bn = nn.BatchNorm2d(128)
 
         self.fc1 = nn.Linear(7*7*128, 1000)  # ((((28-2)/2)-2)/2) = 5,..
-        self.fc1_bn=nn.BatchNorm1d(1000)
+        self.fc1_bn = nn.BatchNorm1d(1000)
 
         self.fc2 = nn.Linear(1000, 200)
-        self.fc2_bn=nn.BatchNorm1d(200)
+        self.fc2_bn = nn.BatchNorm1d(200)
 
         self.fc3 = nn.Linear(200, 50)
         self.fc3_bn=nn.BatchNorm1d(50)
@@ -229,11 +215,9 @@ class RetinaNetwork(nn.Module):
         X = self.fc3(X)
         X = F.relu(self.fc3_bn(X))
         X = self.fc4(X)
-        # return F.sigmoid(X) #for binary class.
         return F.softmax(X, dim=1)
 
 
-# st.title("System klasyfikacji obrazowań medycznych")
 st.markdown("<h1 style='text-align: center; color: silver;'>System klasyfikacji obrazowań medycznych</h1>", unsafe_allow_html=True)
 
 st.text("\n\n")
@@ -281,7 +265,7 @@ model_pneumonia = model_upload(PneumoniaNetwork, 'files/model_pneumonia_91_the_b
 model_oct = model_upload(OCTNetwork, 'files/model_oct_77.pth')
 model_retina = model_upload(RetinaNetwork, 'files/model_retina_53_53.pth')
 
-tab1, tab2, tab3 = st.tabs(["Pneumonia", "OCT", "Retina"])
+tab1, tab2, tab3 = st.tabs(["Płuca", "Siatkówka", "Dno oka"])
 
 ###################
 # Tab for Pneumonia
@@ -446,4 +430,6 @@ with colr33333:
 
         st.write(f'Klasyfikacja: {dict_retina[pred]}')
         st.write(f'Pewność: {round((np.max(out) * 100), 2)}%')
+
+# Thanks to PP
 
