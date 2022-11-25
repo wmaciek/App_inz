@@ -222,7 +222,7 @@ st.markdown("<h1 style='text-align: center; color: silver;'>System klasyfikacji 
 
 st.text("\n\n")
 
-st.text("W celu skorzystania z systemu wybierz odpowiednią kategorię obrazów medycznych.\n"
+st.text("(yyyyW celu skorzystania z systemu wybierz odpowiednią kategorię obrazów medycznych.\n"
         "Następnie załaduj zdjęcie diagnostyczne.\n\nPoniżej przykłady obrazów każdej kategorii:\n\n")
 
 
