@@ -231,8 +231,7 @@ im_2 = img.imread('files/oct_2.png')
 im_3 = img.imread('files/retina_2.png')
 
 with st.sidebar:
-    with st.echo():
-        st.write("This code will be printed to the sidebar.")
+    st.echo("halo")
 
 st.image([im_1, im_2, im_3], clamp=True, width=230)
 
