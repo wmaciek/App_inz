@@ -230,8 +230,7 @@ im_1 = img.imread('files/pneumonia_2.png')
 im_2 = img.imread('files/oct_2.png')
 im_3 = img.imread('files/retina_2.png')
 
-with st.sidebar:
-    st.echo("halo")
+st.sidebar.echo("halo")
 
 st.image([im_1, im_2, im_3], clamp=True, width=230)
 
