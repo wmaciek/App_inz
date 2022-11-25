@@ -233,7 +233,7 @@ st.sidebar.text("Sprawdź statystyki")
 model = st.sidebar.selectbox("Wybierz model:", ['pneumoniamnist', 'octmnist', 'retinamnist'])
 
 if model == 'pneumoniamnist':
-    st.sidebar.write("v`grwh`")
+    st.sidebar.write("vgrwh")
 st.image([im_1, im_2, im_3], clamp=True, width=230)
 
 
