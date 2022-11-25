@@ -233,14 +233,14 @@ st.sidebar.text("Sprawdź statystyki")
 model = st.sidebar.selectbox("Wybierz model:", ['pneumoniamnist', 'octmnist', 'retinamnist'])
 
 if model == 'pneumoniamnist':
-    st.text("Skuteczność: 91.19%")
-    st.text("Precyzja: 0.9117")
+    st.sidebar.text("Skuteczność: 91.19%")
+    st.sidebar.text("Precyzja: 0.9117")
 elif model == 'octmnist':
-    st.text("Skuteczność: 76%")
-    st.text("Precyzja: 0.7662")
+    st.sidebar.text("Skuteczność: 76%")
+    st.sidebar.text("Precyzja: 0.7662")
 else:
-    st.text("Skuteczność: 52.75%")
-    st.text("Precyzja: 0.5363")
+    st.sidebar.text("Skuteczność: 52.75%")
+    st.sidebar.text("Precyzja: 0.5363")
 
 st.image([im_1, im_2, im_3], clamp=True, width=230)
 
